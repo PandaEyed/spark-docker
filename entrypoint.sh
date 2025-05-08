@@ -6,6 +6,7 @@ mkdir -p /etc/frp
 # 检查必要环境变量
 : "${FRPS_ADDR:?Missing FRPS_ADDR}"
 : "${REMOTE_PORT:?Missing REMOTE_PORT}"
+: "${TOKEN:?Missing REMOTE_PORT}"
 
 # 自动生成唯一的代理名称
 DEFAULT_PROXY_NAME="proxy_squid_$(hostname)"
@@ -16,7 +17,7 @@ cat > /etc/frp/frpc.ini <<EOF
 [common]
 server_addr = ${FRPS_ADDR}
 server_port = 7000
-token = qaz123!@#
+token = ${TOKEN}
 
 [${PROXY_NAME}]
 type = tcp
