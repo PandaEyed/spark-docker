@@ -5,7 +5,7 @@ mkdir -p /etc/frp
 
 # 检查必要环境变量
 : "${FRPS_ADDR:?Missing FRPS_ADDR}"
-: "${REMOT_PORT:?Missing REMOT_PORT}"
+: "${REMOTE_PORT:?Missing REMOTE_PORT}"
 
 # 自动生成唯一的代理名称
 DEFAULT_PROXY_NAME="proxy_squid_$(hostname)"
